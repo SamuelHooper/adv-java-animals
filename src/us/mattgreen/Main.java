@@ -11,9 +11,8 @@ public class Main {
         ArrayList<Talkable> zoo = new ArrayList<>();
 
         // Lines to Replace Begin Here
-        zoo.add(new Dog(true, "Bean"));
-        zoo.add(new Cat(9, "Charlie"));
-        zoo.add(new Teacher(44, "Stacy Read"));
+        ZooInputGatherer zig = new ZooInputGatherer();
+        zig.addNewAnimal(zoo);
         // End Lines to Replace
 
         for (Talkable thing : zoo) {
@@ -23,9 +22,9 @@ public class Main {
         inFile.fileRead();
         inFile.fileClose();
 
-        FileInput indata = new FileInput("animals.txt");
+        FileInput inData = new FileInput("animals.txt");
         String line;
-        while ((line = indata.fileReadLine()) != null) {
+        while ((line = inData.fileReadLine()) != null) {
             System.out.println(line);
         }
     }
